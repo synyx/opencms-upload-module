@@ -11,9 +11,9 @@
     </properties>
 
     <scm>
-        <url>https://svn.synyx.org/synyx/internal/projects/opencms/OpenCmsTools/trunk</url>
-        <connection>scm:svn:http://svn.synyx.org/synyx/internal/projects/opencms/OpenCmsTools/trunk</connection>
-        <developerConnection>scm:svn:https://svn.synyx.de/svn/synyx/internal/projects/opencms/OpenCmsTools/trunk</developerConnection>
+        <url>https://svn.synyx.org/synyx/opensource/opencms/netbeans-opencms-upload/opencms-module/trunk</url>
+        <connection>scm:svn:https://svn.synyx.org/synyx/opensource/opencms/netbeans-opencms-upload/opencms-module/trunk</connection>
+        <developerConnection>scm:svn:https://svn.synyx.de/svn/synyx/opensource/opencms/netbeans-opencms-upload/opencms-module/trunk</developerConnection>
     </scm>
 
     <distributionManagement>
@@ -53,10 +53,6 @@
                 <enabled>true</enabled>
                 <checksumPolicy>warn</checksumPolicy>
             </releases>
-        </repository>
-        <repository>
-            <id>powermock-repo</id>
-            <url>http://powermock.googlecode.com/svn/repo/</url>
         </repository>
     </repositories>
 
