@@ -1,0 +1,147 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.synyx.opencms.deployment</groupId>
+    <artifactId>deployment-7</artifactId>
+    <packaging>jar</packaging>
+    <version>1.0.7-SNAPSHOT</version>
+    <name>opencms-upload</name>
+    <url>http://synyx.de</url>
+    <properties>
+	<opencmsname>org.synyx.opencms.fileupload</opencmsname>
+    </properties>
+
+    <scm>
+        <url>https://svn.synyx.org/synyx/internal/projects/opencms/OpenCmsTools/trunk</url>
+        <connection>scm:svn:http://svn.synyx.org/synyx/internal/projects/opencms/OpenCmsTools/trunk</connection>
+        <developerConnection>scm:svn:https://svn.synyx.de/svn/synyx/internal/projects/opencms/OpenCmsTools/trunk</developerConnection>
+    </scm>
+
+    <distributionManagement>
+        <repository>
+            <id>releases.nexus.synyx.de</id>
+            <url>http://nexus.synyx.de/content/repositories/public-releases</url>
+        </repository>
+        <snapshotRepository>
+            <id>snapshots.nexus.synyx.de</id>
+            <url>http://nexus.synyx.de/content/repositories/public-snapshots</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+   <repositories>
+        <repository>
+            <id>nexus.synyx.repository</id>
+            <name>Synyx Nexus</name>
+            <url>http://repo.synyx.de/public/</url>
+            <snapshots>
+                <enabled>true</enabled>
+                <checksumPolicy>warn</checksumPolicy>
+            </snapshots>
+            <releases>
+                <enabled>true</enabled>
+                <checksumPolicy>warn</checksumPolicy>
+            </releases>
+        </repository>
+        <repository>
+            <id>glassfish.repository</id>
+            <name>Glassfish</name>
+            <url>http://download.java.net/maven/glassfish/</url>
+            <snapshots>
+                <enabled>true</enabled>
+                <checksumPolicy>warn</checksumPolicy>
+            </snapshots>
+            <releases>
+                <enabled>true</enabled>
+                <checksumPolicy>warn</checksumPolicy>
+            </releases>
+        </repository>
+        <repository>
+            <id>powermock-repo</id>
+            <url>http://powermock.googlecode.com/svn/repo/</url>
+        </repository>
+    </repositories>
+
+     <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.5</source>
+                    <target>1.5</target>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>com.synyx</groupId>
+                <artifactId>maven-opencms</artifactId>
+                <version>0.1.18</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>createtree</goal>
+                            <goal>manifest</goal>
+                            <goal>createzip</goal>
+                            <!--<goal>cmsshell</goal>-->
+                        </goals>
+                        <configuration>
+                            <name>${opencmsname}</name>
+                            <targetLibPath>system/modules/${opencmsname}/lib/</targetLibPath>
+                            <generateuuids>true</generateuuids>
+                            <exportversion>5</exportversion>
+                            <opencmsversion>7.5.2</opencmsversion>
+                            <version>${project.version}</version>
+                            <srcfolder>${project.basedir}/src/main/webapp/vfs/</srcfolder>
+                            <excludes>META-INF/,WEB-INF/,**/.svn/</excludes>
+                            <distfolder>${project.basedir}/target/opencms-module/</distfolder>
+                            <author>Synyx GmbH &amp; Co. KG</author>
+                            <authoremail>info@synyx.de</authoremail>
+                            <moduleclass />
+                            <parameters />
+                            <exportpoints>
+                                <property>
+                                    <name>/system/modules/${opencmsname}/classes/</name>
+                                    <value>WEB-INF/classes/</value>
+                                </property>
+                                <property>
+                                    <name>/system/modules/${opencmsname}/lib/</name>
+                                    <value>WEB-INF/lib/</value>
+                                </property>
+                            </exportpoints>
+                            <resources>
+                                <param>/system/modules/${opencmsname}/</param>
+                            </resources>
+                        </configuration>
+                    </execution>
+                </executions>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.opencms</groupId>
+                        <artifactId>opencms</artifactId>
+                        <version>7.5.2.1</version>
+                        <type>jar</type>
+			<scope>provided</scope>
+                    </dependency>
+                </dependencies>
+            </plugin>
+
+        </plugins>
+    </build>
+
+   <dependencies>
+        <dependency>
+            <groupId>org.opencms</groupId>
+            <artifactId>opencms</artifactId>
+            <version>7.5.2.1</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
+            <version>2.5</version>
+            <scope>provided</scope>
+        </dependency>
+
+    </dependencies>
+
+</project>
