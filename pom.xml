@@ -3,7 +3,7 @@
     <groupId>org.synyx.opencms.deployment</groupId>
     <artifactId>deployment-7</artifactId>
     <packaging>jar</packaging>
-    <version>1.0.7</version>
+    <version>1.0.8-SNAPSHOT</version>
     <name>opencms-upload</name>
     <url>http://synyx.de</url>
     <properties>
@@ -11,9 +11,9 @@
     </properties>
 
     <scm>
-        <url>https://svn.synyx.org/synyx/opensource/opencms/netbeans-opencms-upload/opencms-module/tags/deployment-7-1.0.7</url>
-        <connection>scm:svn:https://svn.synyx.org/synyx/opensource/opencms/netbeans-opencms-upload/opencms-module/tags/deployment-7-1.0.7</connection>
-        <developerConnection>scm:svn:https://svn.synyx.de/svn/synyx/opensource/opencms/netbeans-opencms-upload/opencms-module/tags/deployment-7-1.0.7</developerConnection>
+        <url>https://svn.synyx.org/synyx/opensource/opencms/netbeans-opencms-upload/opencms-module/trunk</url>
+        <connection>scm:svn:https://svn.synyx.org/synyx/opensource/opencms/netbeans-opencms-upload/opencms-module/trunk</connection>
+        <developerConnection>scm:svn:https://svn.synyx.de/svn/synyx/opensource/opencms/netbeans-opencms-upload/opencms-module/trunk</developerConnection>
     </scm>
 
     <distributionManagement>
